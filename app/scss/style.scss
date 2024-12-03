@@ -1,0 +1,21 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+
+.header {
+  padding: 50px 0 45px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// .menu {
+//   padding: 144px;
+// }
+
+
+
+@import 'media';
