@@ -1,7 +1,8 @@
-@import 'vars';
-@import 'fonts';
-@import 'reset';
-@import 'global';
+@use 'vars';
+@use 'fonts';
+@use 'reset';
+@use 'global';
+@use 'media';
 
 .header {
   padding: 50px 0 45px;
@@ -40,7 +41,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: $accent;
+    background-color: vars.$accent;
   }
   &__box {
     display: flex;
@@ -61,7 +62,7 @@
     height: 16px;
     border-radius: 50%;
     background-color: #fff;
-    color: $subtitle;
+    color: vars.$subtitle;
     bottom: 10px;
     left: 10px;
     font-size: 12px;
@@ -92,9 +93,9 @@
 }
 
 .footer-top {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   padding-bottom: 80px;
-  border-bottom: 1px solid $default;
+  border-bottom: 1px solid vars.$default;
   display: flex;
   justify-content: space-between;
   &__title {
@@ -102,10 +103,13 @@
     font-size: 16px;
     color: #1f2044;
     margin: 20px 0 25px;
+    text-transform: uppercase;
   }
   &__item {
+    margin-bottom: 10px;
     a {
-      color: $default;
+      color: vars.$default;
+      margin-bottom: 10px;
     }
     span {
       text-transform: uppercase;
@@ -116,13 +120,187 @@
     flex-direction: column;
     max-width: 200px;
   }
+  &__text {
+    width: 240px;
+    padding-bottom: 40px;
+  }
+  &__form {
+    display: flex;
+  }
+  &__form-input {
+    background-color: vars.$bg;
+    color: #234969;
+    font-size: 12px;
+    border: none;
+    width: 170px;
+    height: 38px;
+    padding-left: 15px;
+    &::placeholder {
+      color: #234969;
+    }
+  }
+  &__form-btn {
+    background-color: vars.$accent;
+    color: #fff;
+    border: none;
+    width: 100px;
+    height: 38px;
+  }
+ }
+
+ .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  &__list {
+    display: flex;
+  }
+  &__list-item {
+    margin-left: 30px;
+    position: relative;
+    &::before {
+      content: "|";
+      position: absolute;
+      top: 0;
+      left: -15px;
+    }
+    &:first-child::before {
+      content: "";
+    }
+  }
  }
 
  .footer__logo {
   margin-bottom: 30px;
  }
 
+.top {
+  margin-bottom: 75px;
+}
+
+.top-slider {
+  background-image: url('../images/bg-top.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 820px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  &__inner {
+    max-width: 1200px; 
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__box {
+    max-width: 412px;
+    
+  }
+  &__items {
+    width: 100%; 
+    overflow: hidden;
+  }
+  .slick-track {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .slick-slide {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    
+    li {
+      margin: 0 5px;
+      &:first-child {
+        margin-left: 120px;
+      }
+      button {
+        text-decoration: none;
+        width: 30px;
+        height: 30px;
+        font-size: 11px;
+        line-height: 9px;
+        background-color: #fde3cc;
+        color: vars.$subtitle;
+        border-radius: 50%;
+        border: none;
+      }
+      &.slick-active {
+        button {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  &__title {
+    @extend %rubik-500;
+    font-size: 72px;
+    line-height: 70px;
+    color: vars.$subtitle;
+    margin-bottom: 40px;
+  }
+  &__text {
+    width: 370px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 40px;
+  }
+  &__btn {
+    background-color: vars.$accent;
+    border: none;
+    width: 200px;
+    height: 60px;
+  }
+  &__link {
+    color: #fff;
+    display: flex;
+    margin-left: 25px;
+    position: relative;
+    &::after {
+      content: url('../images/icons/arrow-right.svg');
+      position: absolute;
+      top: 0;
+      left: 120px;
+    }
+  }
+  &__content {
+    padding: 45px 0;
+    background-color: vars.$bg;
+    display: flex;
+    justify-content: space-around;
+  }
+  &__content-item {
+    margin-left: 50px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url('../images/icons/24.svg');
+      width: 30px;
+      height: 30px;
+      top: 0;
+      left: 0;
+    }
+  }
+}
 
 
 
-@import 'media';
+
+
+
+
+
