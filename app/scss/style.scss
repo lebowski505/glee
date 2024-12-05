@@ -52,9 +52,14 @@
     height: 50px;
     border-radius: 30px;
     background-color: #fcd7b6;
+    p {
+      color: vars.$bg;
+      font-size: 30px;
+    }
   }
   &__box-link {
     position: relative;
+    margin: 0 35px;
   }
   &__box-num {
     position: absolute;
@@ -198,7 +203,6 @@
   }
   &__box {
     max-width: 412px;
-    
   }
   &__items {
     width: 100%; 
@@ -212,21 +216,15 @@
   .slick-slide {
     display: flex;
     justify-content: right;
-    align-items: center;
-    flex-shrink: 0;
-    position: relative;
+    padding-top: 270px;
+    margin-bottom: 170px;
   }
   .slick-dots {
     display: flex;
-    justify-content: center;
-    position: absolute;
+    margin-left: 120px;
     bottom: 0;
-    
     li {
       margin: 0 5px;
-      &:first-child {
-        margin-left: 120px;
-      }
       button {
         text-decoration: none;
         width: 30px;
@@ -276,27 +274,59 @@
       left: 120px;
     }
   }
-  &__content {
-    padding: 45px 0;
-    background-color: vars.$bg;
-    display: flex;
-    justify-content: space-around;
-  }
-  &__content-item {
-    margin-left: 50px;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      background-image: url('../images/icons/24.svg');
-      width: 30px;
-      height: 30px;
-      top: 0;
-      left: 0;
-    }
-  }
 }
 
+.top-content {
+  background-color: vars.$bg;
+  display: flex;
+  justify-content: space-around;
+  &__item {
+    padding: 45px 0;
+    margin: 0 100px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 51px;
+      height: 52px;
+      top: 60px;
+      left: 0;
+      background-image: url('../images/icons/24.svg');
+    }
+  }
+  &__item--delivery {
+    padding-left: 150px;
+    padding-right: 150px;
+    border-left: 1px solid #e8e4df;
+    border-right: 1px solid #e8e4df;
+  }
+  &__item--delivery::after {
+    content: "";
+    position: absolute;
+    left: 150px;
+    width: 54px;
+    height: 36px;
+    background-image: url('../images/icons/delivery.svg');
+  }
+  &__item--payment::after {
+    width: 54px;
+    height: 52px;
+    background-image: url('../images/icons/credit-card.svg');
+  }
+  &__title {
+    margin-left: 70px;
+    font-size: 18px;
+    line-height: 40px;
+    @extend %dmsans-700;
+  }
+  &__text {
+    width: 210px;
+    margin-left: 70px;
+    font-size: 16px;
+    line-height: 30px;
+    @extend %dmsans-400;
+  }
+}
 
 
 
