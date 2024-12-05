@@ -328,6 +328,114 @@
   }
 }
 
+.product {
+  padding: 75px 0 100px;
+}
+
+.product-top {
+  text-align: center;
+  &__title {
+    font-size: 36px;
+    @extend %dmsans-700;
+    color: #191919;
+    margin-bottom: 40px;
+  }
+  &__filter {
+    margin-bottom: 80px;
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+  &__filter-btn {
+    font-size: 16px;
+    @extend %dmsans-700;
+    color: vars.$default;
+    margin: 0 10px;
+    transition: all .3s;
+    &:hover {
+      color: #191919;
+    }
+  }
+  &__filter-btn--active {
+    background-color: transparent;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 30px;
+  }
+  &__content-item {
+    width: 270px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+    margin-bottom: 10px;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    img {
+      height: 200px;
+      width: 235px;
+    }
+    span {
+      font-size: 16px;
+      color: vars.$accent;
+    }
+  }
+  &__content-item.hidden {
+    opacity: 0;
+    transform: scale(0.8); 
+    pointer-events: none; 
+    position: absolute; 
+  }
+  &__content-title {
+    @extend %dmsans-500;
+    font-size: 16px;
+    line-height: 40px;
+  }
+  &__content-link {
+    color: vars.$subtitle;
+  }
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+  }
+  &__box-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    margin: 10px 7px 20px 7px;
+    border-radius: 50%;
+    background-color: #fff;
+    path {
+      fill: vars.$accent;
+    }
+    &:hover {
+      width: 45px;
+      height: 45px;
+      background-color: vars.$accent;
+    path {
+      fill: #fff;
+    }
+    }
+  }
+}
+
+.product-top__content-item:hover .product-top__box {
+  opacity: 1; 
+  visibility: visible; 
+}
 
 
 
