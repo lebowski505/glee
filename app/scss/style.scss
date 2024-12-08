@@ -437,6 +437,85 @@
   visibility: visible; 
 }
 
+.product-bottom {
+  padding: 185px 0 100px;
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    width: 870px;
+    height: 390px;
+    background-color: vars.$bg;
+  }
+  &__title {
+    padding-left: 385px;
+    color: vars.$subtitle;
+    font-size: 26px;
+    line-height: 32px;
+    @extend %dmsans-700;
+  }
+  &__text{ 
+    margin-left: 385px;
+    max-width: 350px;
+    color: vars.$subtitle;
+    @extend %rubik-400;
+  }
+  &__btn {
+    margin-left: 385px;
+  }
+  &__title {
+    margin-top: 100px;
+    margin-bottom: 25px;
+    position: relative;
+    &::before {
+      content: "";
+      background-image: url('../images/product/item1.svg');
+      width: 233px;
+      height: 405px;
+      left: 0;
+      top: -195px;
+      position: absolute;
+      margin-left: 140px;
+    }
+  }
+  &__title--second::before {
+    content: "";
+      background-image: url('../images/product/item2.svg');
+      width: 222px;
+      height: 399px;
+      margin-left: 150px;
+  }
+  &__title--second {
+    padding-left: 430px;
+  }
+  &__text--second,
+  &__btn--second {
+    margin-left: 430px;
+  }
+  &__text {
+    margin-bottom: 30px;
+  }
+  &__btn {
+    background-color: transparent;
+    width: 180px;
+    height: 60px;
+    border: 1px solid vars.$default;
+    border-radius: 5px;
+  }
+  &__link {
+    color: vars.$subtext;
+    display: flex;
+    margin-left: 25px;
+    position: relative;
+    &::after {
+      content: url('../images/icons/arrow-right-green.svg');
+      position: absolute;
+      top: 0;
+      left: 105px;
+    }
+  }
+}
+
+
 
 
 
