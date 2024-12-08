@@ -29,6 +29,7 @@
   },
   "description": "",
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "slick-carousel": "^1.8.1"
   }
 }
