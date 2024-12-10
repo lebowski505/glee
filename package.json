@@ -29,7 +29,8 @@
   },
   "description": "",
   "dependencies": {
-    "@fancyapps/ui": "^5.0.36",
+    "@fancyapps/fancybox": "^3.5.7",
+    "magnific-popup": "^1.1.0",
     "slick-carousel": "^1.8.1"
   }
 }
