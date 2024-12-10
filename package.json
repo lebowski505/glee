@@ -1,7 +1,6 @@
 {
   "name": "stat_gulp",
   "version": "1.0.0",
-  
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,5 +27,10 @@
     "jquery": "^3.7.1",
     "sass": "^1.80.7"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "magnific-popup": "^1.1.0",
+    "slick-carousel": "^1.8.1"
+  }
 }

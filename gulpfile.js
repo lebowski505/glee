@@ -23,6 +23,9 @@ function styles() {
   return src('app/scss/**/*.scss') 
     .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
     .pipe(concat('style.min.css'))
+    .pipe(imagemin([
+      imagemin.mozjpeg({ quality: 75, progressive: true, fast: true })
+    ]))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 versions'],
       grid: true
@@ -34,6 +37,8 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
@@ -76,6 +81,7 @@ function watching() {
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts); 
   watch(['app/**/*.html']).on('change', browserSync.reload);
 }
+
 
 
 exports.styles      = styles;
