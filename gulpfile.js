@@ -20,25 +20,29 @@ function browsersync() {
 
 
 function styles() {
-  return src('app/scss/**/*.scss') 
+  return src([
+    'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css', 
+    'app/scss/**/*.scss'
+  ]) 
     .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
     .pipe(concat('style.min.css'))
-    .pipe(imagemin([
+    .pipe(imagemin([ 
       imagemin.mozjpeg({ quality: 75, progressive: true, fast: true })
     ]))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 versions'],
       grid: true
     }))
-    .pipe(dest('app/css'))
+    .pipe(dest('app/css')) 
     .pipe(browserSync.stream()); 
 }
+
 
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js',
-    'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+    'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
